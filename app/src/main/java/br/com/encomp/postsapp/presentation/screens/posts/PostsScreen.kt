@@ -1,4 +1,4 @@
-package br.com.encomp.postsapp.presentation.posts
+package br.com.encomp.postsapp.presentation.screens.posts
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -44,7 +44,7 @@ fun PostsScreen(viewModel: PostsViewModel = viewModel())  {
 fun PostItem(post: Post) {
     Card(modifier = Modifier.padding(8.dp).fillMaxWidth()) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Text(text = post.title, style = MaterialTheme.typography.titleMedium)
+            Text(text = post.title, style = MaterialTheme.typography.titleMedium, color = Color.Red)
             Spacer(modifier = Modifier.height(8.dp))
             Text(text = post.body, style = MaterialTheme.typography.bodyMedium)
         }

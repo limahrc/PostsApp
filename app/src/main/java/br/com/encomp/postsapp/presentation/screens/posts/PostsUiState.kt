@@ -1,4 +1,4 @@
-package br.com.encomp.postsapp.presentation.posts
+package br.com.encomp.postsapp.presentation.screens.posts
 
 import br.com.encomp.postsapp.data.model.Post
 
