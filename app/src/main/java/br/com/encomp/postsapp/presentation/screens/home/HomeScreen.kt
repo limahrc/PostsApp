@@ -10,27 +10,50 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import br.com.encomp.postsapp.presentation.Toolbar
 
 @Composable
 fun HomeScreen(
-    onNavigate: () -> Unit
+    onNavigateToPosts: () -> Unit,
+    onNavigateToQuotes: () -> Unit
 ) {
+    Scaffold(
+        topBar = { Toolbar(text = "Home") }
+    ) {
+        ScreenContent(
+            modifier = Modifier.padding(it),
+            onNavigateToPosts = onNavigateToPosts,
+            onNavigateToQuotes = onNavigateToQuotes
+        )
+    }
+}
 
-    Scaffold() {
-        Column(
-            modifier = Modifier
-                .padding(it)
-                .fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+@Composable
+private fun ScreenContent(
+    modifier: Modifier = Modifier,
+    onNavigateToPosts: () -> Unit,
+    onNavigateToQuotes: () -> Unit
+) {
+    Column(
+        modifier = modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text = "Clique abaixo para ver os posts"
+        )
+        Button(
+            onClick = onNavigateToPosts,
         ) {
-            Button(
-                onClick = onNavigate
-            ) {
-                Text(
-                    text = "Ver posts"
-                )
-            }
+            Text(text = "Go to Posts")
+        }
+        Text(
+            text = "Clique abaixo para ver os quotes"
+        )
+        Button(
+            onClick = onNavigateToQuotes
+        ) {
+            Text(text = "Go to Quotes")
         }
     }
 }

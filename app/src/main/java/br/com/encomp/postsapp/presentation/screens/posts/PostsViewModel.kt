@@ -1,4 +1,4 @@
-package br.com.encomp.postsapp.presentation.posts
+package br.com.encomp.postsapp.presentation.screens.posts
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
